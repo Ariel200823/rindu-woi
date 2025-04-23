@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -42,10 +41,8 @@
     .flowers {
       position: absolute;
       inset: 0;
-      background: url('https://ik.imagekit.io/demo/img/image1.jpeg') repeat center center;
-      background-size: 100px;
-      animation: bloom 3s ease-in-out forwards;
       display: none;
+      text-align: center;
     }
 
     .grass {
@@ -55,32 +52,6 @@
       height: 100px;
       background: url('https://ik.imagekit.io/demo/img/image2.jpeg') repeat-x;
       background-size: contain;
-    }
-
-    .petal {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: url('https://ik.imagekit.io/demo/img/image3.jpg') no-repeat;
-      background-size: cover;
-      animation: fall 8s linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes bloom {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-      }
     }
 
     audio {
@@ -96,8 +67,9 @@
 
   <div class="flowers" id="flowers">
     <div class="grass"></div>
+    <img src="bunga-bersinar.jpg" alt="Bunga Bersinar" style="display:block; margin: 0 auto; max-width: 90%; height: auto;">
     <audio id="music" autoplay loop>
-      <source src="https://dl.sndup.net/k9tw/Raim%20Laode%20-%20Lesung%20Pipi.mp3" type="audio/mpeg">
+      <source src="Raim Laode - Lesung Pipi (Official Audio).mp3" type="audio/mpeg">
     </audio>
   </div>
 
@@ -107,16 +79,6 @@
       const flowers = document.getElementById('flowers');
       flowers.style.display = 'block';
       document.getElementById('music').play();
-
-      for (let i = 0; i < 30; i++) {
-        const petal = document.createElement('div');
-        petal.classList.add('petal');
-        petal.style.left = Math.random() * window.innerWidth + 'px';
-        petal.style.animationDelay = (Math.random() * 5) + 's';
-        petal.style.width = (10 + Math.random() * 20) + 'px';
-        petal.style.height = petal.style.width;
-        flowers.appendChild(petal);
-      }
     }
   </script>
 </body>
